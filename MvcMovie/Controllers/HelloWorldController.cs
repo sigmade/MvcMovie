@@ -21,7 +21,14 @@ namespace MvcMovie.Controllers
 
         // GET: /HelloWorld/Welcome
 
-        public string Welcome()        
+        public IActionResult Welcome(string name, int numTimes = 1)        
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+            return View();
+        }
+
+        public string Easy()
         {
             return "This is he welcome action method";
         }
